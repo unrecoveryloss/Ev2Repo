@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recuperar Contraseña - EcoFood Community</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="text-center p-3">
+      <h1>Recuperar Contraseña</h1>
+    </header>
+  
+    <main class="container mt-4">
+      <form>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Ingrese su Correo Electrónico para recuperar su contraseña</label>
+          <input type="email" class="form-control" id="correo" required>
+        </div>
+        <div>
+            <button href="index.html" type="submit" class="btn btn-success" onclick="miAlerta()">Enviar link de recuperación al correo</button>
+        </div>
+
+        <script>
+            function miAlerta() {
+            alert("Se ha enviado un link de recuperación al correo");
+            }
+        </script>
+      </form>
+  
+      <div class="text-center mt-4">
+        <a href="index.html" class="btn btn-outline-success">Volver al Inicio</a>
+      </div>
+  
+    </main>
+  
+    <footer class="text-center mt-4 p-3">
+      <p>&copy; 2025 EcoFood Community</p>
+    </footer>
+  </body>
+  </html>

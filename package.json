@@ -9,8 +9,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unrecoveryloss/Ev2Repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unrecoveryloss/Ev2Repo/issues"
+  },
+  "homepage": "https://github.com/unrecoveryloss/Ev2Repo#readme",
+  "description": ""
 }
