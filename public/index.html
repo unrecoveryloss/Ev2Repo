@@ -19,6 +19,20 @@
 
   <main class="container mt-4">
     <section>
+
+      <p id="fraseMotivadora" class="text-center"></p>
+
+      <script>
+        const frases = ["El desperdicio de alimentos es un problema global. En 2022, el mundo desperdició 1.050 millones de toneladas de alimentos.", "Según datos de la FAO y de la Agencia Mundial del Hambre, se estima que en Chile se desperdician 63,3 kg de pan al año por familia, lo que corresponde al 16,7% del consumo promedio en la población nacional.", "En Chile, se desperdician anualmente millones de kilos de comida, con estimaciones que varían según la fuente. Algunos estudios indican que se botán 3.700 millones de kilos al año, lo que equivale a más de 4.000 canchas de fútbol llenas de comida. "];
+        function mostrarFrase() {
+          const frase = frases[Math.floor(Math.random() * frases.length)];
+          document.getElementById("fraseMotivadora").textContent = frase;
+        }
+        window.onload = mostrarFrase();
+
+      </script>
+
+
       <div>
         <h2>¿Quiénes Somos?</h2>
         <p>EcoFood es una organización comprometida con la reducción del desperdicio alimentario mediante iniciativas educativas, tecnológicas y prácticas cotidianas. Nuestro propósito es promover un mundo más justo y sostenible, empoderando a las personas y comunidades para optimizar el uso de alimentos, minimizar residuos y proteger nuestro planeta.
