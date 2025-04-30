@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css"
 </head>
 <body>
+
   <header class="text-center p-3">
     <h1>Iniciar Sesión</h1>
   </header>
@@ -16,13 +17,13 @@
     <form>
       <div class="mb-3">
         <label for="correo" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="correo" required>
+        <input type="email" class="form-control" id="correoLogin">
       </div>
       <div class="mb-3">
         <label for="contraseña" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="contraseña" required>
+        <input type="password" class="form-control" id="contraseñaLogin">
       </div>
-      <button href="home.html" type="submit" class="btn btn-success">Ingresar</button>
+      <button href="home.html" type="submit" class="btn btn-success" onclick="validarLogin()">Ingresar</button>
     </form>
 
     <div class="text-center mt-4">
@@ -30,6 +31,20 @@
       <a href="registro.html" class="btn btn-primary">¿No tienes una cuenta? ¡Regístrate!</a>
       <a href="recuperar.html" class="btn btn-primary">¿Olvidaste tu contraseña? Recupérala aquí</a>
     </div>
+
+    <script>
+      function validarLogin() {
+        const correo = "root@asd.cl";
+        const password = "asd";
+        if (correo.toLowerCase() === "root@asd.cl" && password.toLowerCase() === "asd")
+          {
+            if (correo.trim() === "" || password.trim() === ""){
+              alert("Correo y contraseña son obligatorios.");
+              return false;
+              }
+          }
+      }
+    </script>
 
   </main>
 
