@@ -16,19 +16,19 @@
     <form>
       <div class="mb-3">
         <label for="nombreRegistro" class="form-label">Nombre Completo</label>
-        <input type="text" class="form-control" id="nombreRegistro" required>
+        <input type="text" class="form-control" id="nombreRegistro" >
       </div>
       <div class="mb-3">
         <label for="correoRegistro" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="correoRegistro" required>
+        <input type="email" class="form-control" id="correoRegistro">
       </div>
       <div class="mb-3">
         <label for="contraseñaRegistro" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="contraseñaRegistro" required>
+        <input type="password" class="form-control" id="contraseñaRegistro" >
       </div>
       <div class="mb-3">
         <label for="fechaRegistro" class="form-label">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" id="fechaRegistro" required>
+        <input type="date" class="form-control" id="fechaRegistro" >
       </div>
       <div class="mb-3">
         <label for="generoRegistro" class="form-label">Género</label>
@@ -40,7 +40,7 @@
         </select>
       </div>
       <div class="mb-3">
-        <p>¿Cómo supiste de nosotros?</p>
+        <p>¿Cómo supiste de nosotros?(Opcional)</p>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="redes">
           <label class="form-check-label" for="redes">Redes sociales</label>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="text-center mt-4">
-        <button type="submit" class="btn btn-primary" onclick="avisoRegistro()">Registrar</button>
+        <button type="submit" class="btn btn-primary" onclick="validarFormulario()">Registrar</button>
         <a href="index.html" class="btn btn-outline-success">Volver al Inicio</a>
       </div>  
     </form>
@@ -65,43 +65,45 @@
       <!-- "incluir funcion de validacion de cada campo en registro"-->
 
     <script>
-        alert("¡Registrado con éxito!");
-      if (document.getElementById("correoLogin").value.trim() === "" || document.getElementById("contraseñaLogin").value.trim() === "")
       function validarFormulario() 
         { 
+        event.preventDefault();
+  
         const usernombre = document.getElementById("nombreRegistro").value;
         const usercorreo = document.getElementById("correoRegistro").value;
         const usercontraseña = document.getElementById("contraseñaRegistro").value;
         const userfecha = document.getElementById("fechaRegistro").value;
         const usergenero = document.getElementById("generoRegistro").value;
 
-        if (usernombre.trim() === "") 
-          {
-            if (usercorreo.trim() === "")
-            {
-              if (usercontraseña.trim() === "") 
-              {
-                if (userfecha.trim() === "") 
-                {
-                  if (usergenero.trim() === "") 
-                  {
-                    alert("Debes ingresar tu genero.");
-                    return false;
-                  }
-                  alert("Debes ingresar tu fecha de nacimiento.");
-                  return false;
-                }
-                alert("Debes ingresar tu contraseña.");
-                return false;
-              }
-              alert("Debes ingresar tu correo.");
-              return false;
-            }
-          alert("Debes ingresar tu nombre.");
+        if (usernombre.trim() === ""){
+          alert("Campo de Nombre vacío. Por favor complételo antes de continuar.")
           return false;
-          }
-        return true;
         }
+
+        if (usercorreo.trim() === ""){
+          alert("Campo de Correo vacío. Por favor complételo antes de continuar.")
+          return false;
+        }
+
+        if (usercontraseña.trim() === ""){
+          alert("Campo de Contraseña vacío. Por favor complételo antes de continuar.")
+          return false;
+        }
+
+        if (userfecha.trim() === ""){
+          alert("Campo de Fecha vacío. Por favor complételo antes de continuar.")
+          return false;
+        }
+
+        if (usergenero.trim() === "Seleccionar"){
+          alert("Campo de Género sin seleccionar. Por favor complételo antes de continuar.")
+          return false;
+        } else if(usergenero.trim != "Seleccionar")
+            {
+            alert("¡Has sido registrado exitosamente en EcoFood!")};
+        
+      };
+        
     </script>
 
 

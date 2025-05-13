@@ -39,11 +39,16 @@
         event.preventDefault();
         var  usercorreo = document.getElementById("correoLogin").value ;
         var  usercontraseña = document.getElementById("contraseñaLogin").value;
-        
-        if (usercorreo === "root@asd.cl" && usercontraseña === "asd") 
-          {
-            window.location.href= "home.html"
-          };
+         
+        if (usercorreo.trim() === "" || usercontraseña.trim() === "") 
+        {
+          alert("Correo y contraseña son obligatorios.");
+          return false;
+        } else if (usercorreo === "root@asd.cl" && usercontraseña === "asd") 
+        {
+          window.location.href= "home.html"
+        } alert("Credenciales Incorrectas. Por favor intenta otra vez.");
+        return true;
       };
     </script>
 
