@@ -11,13 +11,61 @@
   <header class="text-center p-3">
     <h1>EcoFood Community</h1>
   </header>
+  <div class="container text-center p-3">
+    <h2 class="mb-4">¡Bienvenido/a a EcoFood Community!</h2>
+    <p class="lead">Gracias por formar parte de nuestra comunidad comprometida con la sostenibilidad.</p>
 
-  <main class="d-flex justify-content-center align-items-center vh-100 text-center">
-    <div>
-      <h2 class="mb-4">¡Bienvenido/a a EcoFood Community!</h2>
-      <p class="lead">Gracias por formar parte de nuestra comunidad comprometida con la sostenibilidad.</p>
+
+
+    <div class="row g-4">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="img/queso.jpg" class="card-img-top" width="400" height="200">
+          <div class="card-body">
+            <h5 class="card-title">Queso EcoFood</h5>
+            <p class="card-text">$3000 cada unidad.</p>
+          </div>
+        </div>  
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="img/miel.png" class="card-img-top" width="400" height="200">
+          <div class="card-body">
+            <h5 class="card-title">Miel EcoFood</h5>
+            <p class="card-text">$5000 cada unidad.</p>
+          </div>
+        </div>  
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="img/huevo.png" class="card-img-top" width="400" height="200">
+          <div class="card-body">
+            <h5 class="card-title">Huevo EcoFood</h5>
+            <p class="card-text">$200 cada unidad.</p>
+          </div>
+        </div>  
+      </div>
     </div>
-  </main>
+  </div>
+
+
+  <script>
+    let productos = new Map();
+    productos.set("Huevo EcoFood", "200");
+    productos.set("Miel EcoFood", "5000");
+    productos.set("Queso EcoFood", "3000");
+
+    function listarProductos(){
+      for (let [key, value] of productos) {
+        console.log(key + " tiene un valor de " + "$" + value + " cada unidad" );
+      }
+    }
+
+    // "cat goes meow"
+    // "elephant goes toot"
+
+
+  </script>
 
   <footer class="text-center p-3">
     <p>&copy; 2025 EcoFood Community</p>
