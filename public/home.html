@@ -17,7 +17,7 @@
 
 
 
-    <div class="row g-4">
+    <div class="row g-4" id="agregarProducto">
       <div class="col">
         <div class="card" style="width: 18rem;">
           <img src="img/queso.jpg" class="card-img-top" width="400" height="200">
@@ -46,25 +46,58 @@
         </div>  
       </div>
     </div>
+    <button onclick="listarProducto()" class="btn btn-primary">Listar Productos</button>
   </div>
 
 
   <script>
-    let productos = new Map();
-    productos.set("Huevo EcoFood", "200");
-    productos.set("Miel EcoFood", "5000");
-    productos.set("Queso EcoFood", "3000");
 
-    function listarProductos(){
-      for (let [key, value] of productos) {
-        console.log(key + " tiene un valor de " + "$" + value + " cada unidad" );
-      }
-    }
+    const productos = [ 
+      {
+      "id": 1,
+      "nombreProducto": "Queso",
+      "valorProducto": "$3000",
+      "imagenProducto": "/img/queso.jpg"
+      },
+      {
+      "id": 2,
+      "nombreProducto": "Miel",
+      "valorProducto": "$5000",
+      "imagenProducto": "/img/miel.png"
+      },
+      {
+      "id": 3,
+      "nombreProducto": "Huevo",
+      "valorProducto": "$200",
+      "imagenProducto": "/img/huevo.png"
+      }];
 
-    // "cat goes meow"
-    // "elephant goes toot"
+      function listarProducto() {
+        event.preventDefault();
+        
+        productos.forEach((element) => {
+            console.log(element.nombreProducto);
+            document.getElementById("agregarProducto").innerHTML += `
+                <div class="col">
+                  <div class="card" style="width: 18rem;">
+                    <img src="img/miel.png" class="card-img-top" width="400" height="200">
+                    <div class="card-body">
+                      <h5 class="card-title">${element.nombreProducto}</h5>
+                      <p class="card-text">${element.valorProducto} cada unidad.</p>
+                    </div>
+                  </div>  
+                </div>
+            `
+          }
+        );
+        
+        
+      };
 
-
+      window.onload = (event) => {
+        listarProducto();
+      };
+       
   </script>
 
   <footer class="text-center p-3">
