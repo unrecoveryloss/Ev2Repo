@@ -18,35 +18,7 @@
 
 
     <div class="row g-4" id="agregarProducto">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="img/queso.jpg" class="card-img-top" width="400" height="200">
-          <div class="card-body">
-            <h5 class="card-title">Queso EcoFood</h5>
-            <p class="card-text">$3000 cada unidad.</p>
-          </div>
-        </div>  
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="img/miel.png" class="card-img-top" width="400" height="200">
-          <div class="card-body">
-            <h5 class="card-title">Miel EcoFood</h5>
-            <p class="card-text">$5000 cada unidad.</p>
-          </div>
-        </div>  
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="img/huevo.png" class="card-img-top" width="400" height="200">
-          <div class="card-body">
-            <h5 class="card-title">Huevo EcoFood</h5>
-            <p class="card-text">$200 cada unidad.</p>
-          </div>
-        </div>  
-      </div>
-    </div>
-    <button onclick="listarProducto()" class="btn btn-primary">Listar Productos</button>
+
   </div>
 
 
@@ -57,30 +29,30 @@
       "id": 1,
       "nombreProducto": "Queso",
       "valorProducto": "$3000",
-      "imagenProducto": "/img/queso.jpg"
+      "imagenProducto": "img/queso.jpg"
       },
       {
       "id": 2,
       "nombreProducto": "Miel",
       "valorProducto": "$5000",
-      "imagenProducto": "/img/miel.png"
+      "imagenProducto": "img/miel.png"
       },
       {
       "id": 3,
       "nombreProducto": "Huevo",
       "valorProducto": "$200",
-      "imagenProducto": "/img/huevo.png"
+      "imagenProducto": "img/huevo.png"
       }];
 
       function listarProducto() {
         event.preventDefault();
         
         productos.forEach((element) => {
-            console.log(element.nombreProducto);
+            console.log(element.imagenProducto);
             document.getElementById("agregarProducto").innerHTML += `
                 <div class="col">
                   <div class="card" style="width: 18rem;">
-                    <img src="img/miel.png" class="card-img-top" width="400" height="200">
+                    <img src="${element.imagenProducto}" class="card-img-top" width="400" height="200">
                     <div class="card-body">
                       <h5 class="card-title">${element.nombreProducto}</h5>
                       <p class="card-text">${element.valorProducto} cada unidad.</p>
